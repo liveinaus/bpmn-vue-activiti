@@ -1,33 +1,21 @@
 {
-  "include": [
-    "./src/"
-//    "./**/*.ts", "src/bpmn/config/common.tsx","src/bpmn/config/modules/*.tsx"
-  ],
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
-    "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
     "esModuleInterop": true,
-    "baseUrl": "src",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "types": [
-      "vite/client"
-    ],
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "/#/*": [
-        "./types/*"
-      ]
-    }
+      "@/*": ["./src/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/main.js"],
+  "exclude": ["node_modules"]
 }
